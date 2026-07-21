@@ -1,0 +1,246 @@
+/* Bộ lọc sản phẩm */
+.product-filters {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.filter-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.filter-select {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  transition: border-color 0.3s;
+}
+
+.filter-select:focus {
+  border-color: #e63946;
+  outline: none;
+}
+
+.filter-btn {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+  background-color: #c1121f;
+}
+
+.reset-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reset-btn:hover {
+  background-color: #495057;
+}
+
+@media (max-width: 768px) {
+  .product-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-btn,
+  .reset-btn {
+    width: 100%;
+  }
+}
+
+
+/* ------ */
+.filter-select {
+  padding: 10px;
+  border: 2px solid #e63946;
+  border-radius: 5px;
+}
+
+
+.product-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.product-gallery {
+  flex: 1;
+  min-width: 300px;
+}
+
+.product-info {
+  flex: 2;
+  min-width: 300px;
+}
+
+.product-info h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.product-info .price {
+  font-size: 24px;
+  color: #e63946;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.product-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.product-description p,
+.product-description ul {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* Yêu thích */
+.wishlist-btn {
+  background-color: #e0f7f1;
+  border: 1px solid #1abc9c;
+  border-radius: 8px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 10px;
+}
+
+.wishlist-btn:hover {
+  background-color: #1abc9c;
+}
+
+.heart-icon {
+  font-size: 18px;
+  color: #1abc9c;
+  transition: color 0.3s ease;
+}
+
+.wishlist-btn:hover .heart-icon {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .product-filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .filter-select {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .modal-content {
+    width: 90%;
+    margin-top: 20%;
+    padding: 15px;
+  }
+
+  .product-detail {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .product-info h1 {
+    font-size: 24px;
+  }
+
+  .product-info .price {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .wishlist-btn,
+  .btn.add-to-cart {
+    width: 100%;
+  }
+}
+
+.collection-img {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Thông báo thêm vào giỏ hàng thành công */
+/* Định nghĩa kiểu dáng cho toast */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #28a745;
+  /* Màu xanh lá cho thông báo thành công */
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px 24px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Thêm bóng đổ nhẹ */
+  transform: translateY(20px);
+  /* Hiệu ứng di chuyển khi hiển thị */
+}
+
+/* Toast khi hiển thị */
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  /* Toast xuất hiện từ dưới lên */
+}
+
+/* Toast có màu sắc khác cho thông báo lỗi */
+.toast.error {
+  background-color: #dc3545;
+  /* Màu đỏ cho thông báo lỗi */
+}
