@@ -1,0 +1,11 @@
+# Bỏ qua Node modules
+node_modules/
+Backend/node_modules/
+
+# Bỏ qua file môi trường
+.env
+Backend/.env
+
+# Bỏ qua file database local
+*.db
+*.sqlite
